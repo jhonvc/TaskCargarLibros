@@ -19,7 +19,6 @@ public class TaskCargarLibros extends AsyncTask<URL,Integer, String> {
     Context context;
     MainActivity actividad;
 
-
     public TaskCargarLibros(Context context) {
         this.context = context;
         actividad=(MainActivity)context;
@@ -56,7 +55,7 @@ public class TaskCargarLibros extends AsyncTask<URL,Integer, String> {
         try {
             JSONObject objecto = new JSONObject(s);
             JSONArray libros = objecto.getJSONArray("items");
-            actividad.LlenarLibros();
+            actividad.LlenarLibros(libros);
 
         } catch (JSONException e) {
             e.printStackTrace();
